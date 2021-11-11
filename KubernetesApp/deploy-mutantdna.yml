@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: mutantdna
-          image: wilcor7190/mutantdna:tagname
+          image: wilcor7190/mutantdna:v1.0
           env:
           - name: ENV
             value: mongo-service
