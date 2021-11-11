@@ -1,0 +1,31 @@
+apiVersion: mongodb/v1
+kind: Deployment
+metadata:
+  name: mongodb-deploy
+  labels:
+    name: mongodb-deploy
+    app: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+      type: bd
+  template:
+    metadata:
+      name: mongodb-pod
+      labels:
+        app: mongodb
+        type: bd
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:4.0.4
+          command:
+          - /bin/bash
+          - -c
+          env:
+          - name: AUTH
+            value: "no"
+          ports:
+            - containerPort: 27017

@@ -1,0 +1,28 @@
+apiVersion: mutantdna/v1
+kind: Deployment
+metadata:
+  name: mutantdna-deploy
+  labels:
+    name: mutantdna-deploy
+    app: mutantdna
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mutantdna
+      type: app
+  template:
+    metadata:
+      name: mutantdna-pod
+      labels:
+        app: mutantdna
+        type: app
+    spec:
+      containers:
+        - name: mutantdna
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
+          env:
+          - name: ENV
+            value: mongo-service
+          ports:
+          - containerPort: 9200
