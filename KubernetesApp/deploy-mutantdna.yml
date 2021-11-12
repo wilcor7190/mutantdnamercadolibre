@@ -1,4 +1,4 @@
-apiVersion: mutantdna/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mutantdna-deploy
@@ -25,4 +25,4 @@ spec:
           - name: ENV
             value: mongo-service
           ports:
-          - containerPort: 9200
+          - containerPort: 8080

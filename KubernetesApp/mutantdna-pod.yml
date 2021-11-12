@@ -13,6 +13,6 @@ spec:
       - name: ENV
         value: mongo-service
       ports:
-      - containerPort: 9200
+      - containerPort: 8080
 
     
