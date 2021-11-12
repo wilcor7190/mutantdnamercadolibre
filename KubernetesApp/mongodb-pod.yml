@@ -9,9 +9,6 @@ spec:
   containers:
     - name: mongo
       image: mongo:4.0.4
-      command:
-      - /bin/bash
-      - -c
       env:
       - name: AUTH
         value: "no"
